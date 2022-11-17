@@ -2,6 +2,7 @@ import java.util.*;
 import java.lang.String;
 
 abstract class phone{
+    // base class containing necessary variables and methods
     String Origin;
     String osSkin;
     String Company;
@@ -21,6 +22,7 @@ abstract class phone{
     abstract void display();
 }
 
+// creating a class for each mobile
 class S20 extends phone
 {
     S20(){
@@ -165,6 +167,8 @@ class TenR5G extends phone{
     }
 }
 
+
+// manager class shows the available phones and decides which phone is to be displayed
 class manager{
     S20 Samsung1 = new S20();
     ZFold3 Samsung2 = new ZFold3();
@@ -190,7 +194,8 @@ class manager{
         int tempCount = 0; // in case no phones are found
 
         System.out.println();
-
+        
+        // prints the phones on the basis of company and price given
         for (int i = 0; i<count; i++){
             if((temp.equalsIgnoreCase(array[i].Company) || temp.equalsIgnoreCase("NIL")) && array[i].price <= tempPrice){
                 array[i].display();
